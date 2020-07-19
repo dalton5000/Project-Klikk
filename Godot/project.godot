@@ -64,8 +64,8 @@ config/icon="res://icon.png"
 
 Data="*res://source/global/Data.gd"
 Settings="*res://source/global/Settings.gd"
-Abra="*res://source/global/abra.gd"
 Arceus="*res://source/global/Arceus.gd"
+Abra="*res://source/global/Abra.tscn"
 
 [display]
 

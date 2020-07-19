@@ -11,8 +11,10 @@ script = ExtResource( 4 )
 [node name="Map" parent="." instance=ExtResource( 2 )]
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 56, 88 )
+position = Vector2( 72, 88 )
 
 [node name="NPC" parent="." instance=ExtResource( 1 )]
-position = Vector2( 152, 104 )
+position = Vector2( 152, 88 )
 is_strolling = true
+
+[editable path="Map"]

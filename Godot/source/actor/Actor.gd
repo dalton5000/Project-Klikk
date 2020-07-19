@@ -21,6 +21,9 @@ var last_state = STATES.IDLE
 onready var body_anim = $Animation/BodyAnimation
 onready var movement_tween = $MovementTween
 
+func _ready():
+	Abra.occupy_position(position)
+
 func move(_dir):
 	change_state(STATES.MOVE)
 	dir = _dir
@@ -30,6 +33,8 @@ func move(_dir):
 	
 	$MovementTween.interpolate_property(self,"position",position,position + dir * cell_size,move_duration,Tween.TRANS_SINE,Tween.EASE_IN_OUT)
 	$MovementTween.start()
+	Abra.free_position(position)
+	Abra.occupy_position(position + dir*cell_size)
 
 func change_state(new_state):
 	last_state = state

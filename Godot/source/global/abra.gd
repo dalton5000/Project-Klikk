@@ -10,12 +10,40 @@ var cell_data = {
 	"observed": false
 }
 
+var occupations = {}
+
+onready var helper_map : TileMap = $HelperMap
+
 func is_cell_blocked(pos):
 	pass
 
 func occupy_cell(pos):
+	if pos in occupations:
+		occupations[pos] += 1
+	else:
+		occupations[pos] = 1
 	cells[pos].occupied = true
-
+	
+	Arceus.emit_signal("cell_info_updated")
+		
+func free_cell(pos):
+	if pos in occupations:
+		occupations[pos] -= 1
+	else:
+		print("freed non-occupied cell")
+	if occupations[pos] < 1:
+		cells[pos].occupied = false
+		
+	Arceus.emit_signal("cell_info_updated")
+		
+func occupy_position(pos):
+	var c = helper_map.world_to_map(pos)
+	occupy_cell(c)
+	
+func free_position(pos):
+	var c = helper_map.world_to_map(pos)
+	free_cell(c)
+	
 func register_grass(pos, type):
 	cells[pos]["type"] = type
 
@@ -29,7 +57,7 @@ func get_grass_map():
 func get_blocked_map():
 	var blocked_map = []
 	for cell in cells:
-		if cell.type in [CELL_TYPE.BLOCKED] or cell.occupied:
+		if cells[cell].type in [CELL_TYPE.BLOCKED] or cells[cell].occupied:
 			blocked_map.append(cell)
 	return blocked_map
 	
@@ -41,3 +69,4 @@ func init_map(rect):
 
 func unload_map():
 	cells = {}
+	occupations = {}

@@ -10,6 +10,5 @@ script = ExtResource( 3 )
 
 [node name="Sprite" parent="Sprites" index="0"]
 texture = ExtResource( 2 )
-frame = 19
 
 [node name="PlayerController" parent="." index="2" instance=ExtResource( 4 )]
