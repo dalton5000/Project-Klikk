@@ -1,15 +1,18 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://source/actor/Actor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://source/actor/npc/NPC.tscn" type="PackedScene" id=1]
 [ext_resource path="res://source/map/Map.tscn" type="PackedScene" id=2]
 [ext_resource path="res://source/actor/player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://source/overworld/Overworld.gd" type="Script" id=4]
 
 [node name="Overworld" type="Node2D"]
+script = ExtResource( 4 )
 
 [node name="Map" parent="." instance=ExtResource( 2 )]
 
-[node name="Actor" parent="." instance=ExtResource( 1 )]
-position = Vector2( 105.63, 73.2 )
-
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 56.0582, 100.534 )
+
+[node name="NPC" parent="." instance=ExtResource( 1 )]
+position = Vector2( 99.5884, 50.8209 )
+is_strolling = true
