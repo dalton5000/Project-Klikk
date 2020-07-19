@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://source/actor/Actor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/spritesheets/player/ethan-adjusted.png" type="Texture" id=2]
+[ext_resource path="res://source/actor/player/Player.gd" type="Script" id=3]
+[ext_resource path="res://source/actor/player/PlayerController.tscn" type="PackedScene" id=4]
+
+[node name="Player" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="Sprite" parent="Sprites" index="0"]
+texture = ExtResource( 2 )
+frame = 19
+
+[node name="PlayerController" parent="." index="2" instance=ExtResource( 4 )]

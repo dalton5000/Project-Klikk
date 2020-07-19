@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://source/actor/Actor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://source/actor/npc/NPCController.tscn" type="PackedScene" id=2]
+[ext_resource path="res://source/actor/npc/NPC.gd" type="Script" id=3]
+
+[node name="NPC" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="NPCController" parent="." index="3" instance=ExtResource( 2 )]
