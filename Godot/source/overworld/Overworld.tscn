@@ -11,8 +11,8 @@ script = ExtResource( 4 )
 [node name="Map" parent="." instance=ExtResource( 2 )]
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 56.0582, 100.534 )
+position = Vector2( 56, 88 )
 
 [node name="NPC" parent="." instance=ExtResource( 1 )]
-position = Vector2( 99.5884, 50.8209 )
+position = Vector2( 152, 104 )
 is_strolling = true

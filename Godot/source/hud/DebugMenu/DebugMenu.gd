@@ -26,3 +26,7 @@ func slide():
 
 func _on_ShowButton_pressed():
 	slide()
+
+
+func _on_CellInfoButton_pressed():
+	Arceus.emit_signal("cell_info_pressed")
