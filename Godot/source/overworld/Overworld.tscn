@@ -7,7 +7,7 @@
 [ext_resource path="res://source/map/map_object/buildings/Pokecenter.tscn" type="PackedScene" id=5]
 [ext_resource path="res://source/map/map_object/trees/Tree1.tscn" type="PackedScene" id=6]
 
-[node name="Overworld" type="Node2D"]
+[node name="Overworld" type="YSort"]
 script = ExtResource( 4 )
 
 [node name="Map" parent="." instance=ExtResource( 2 )]
@@ -15,16 +15,15 @@ script = ExtResource( 4 )
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 72, 88 )
 
-[node name="NPC" parent="." instance=ExtResource( 1 )]
+[node name="Characters" type="YSort" parent="."]
+
+[node name="NPC" parent="Characters" instance=ExtResource( 1 )]
 position = Vector2( 152, 88 )
 is_strolling = true
 
-[node name="PokeCenter" parent="." instance=ExtResource( 5 )]
-position = Vector2( 264, -8 )
+[node name="Objects" type="YSort" parent="."]
 
-[node name="Objects" type="Node2D" parent="."]
-
-[node name="Trees" type="Node2D" parent="Objects"]
+[node name="Trees" type="YSort" parent="Objects"]
 
 [node name="MapObject" parent="Objects/Trees" instance=ExtResource( 6 )]
 position = Vector2( 264, 136 )
@@ -34,5 +33,10 @@ position = Vector2( 296, 216 )
 
 [node name="MapObject3" parent="Objects/Trees" instance=ExtResource( 6 )]
 position = Vector2( 248, 216 )
+
+[node name="Buildings" type="YSort" parent="Objects"]
+
+[node name="PokeCenter" parent="Objects/Buildings" instance=ExtResource( 5 )]
+position = Vector2( 264, -8 )
 
 [editable path="Map"]
