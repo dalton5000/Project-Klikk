@@ -1,7 +1,5 @@
 extends Node
 
-#test
-
 var cells = {}
 
 enum CELL_TYPE { GROUND, BLOCKED, GRASS_LOW, GRASS_HIGH, WATER, WATER_DEEP}
