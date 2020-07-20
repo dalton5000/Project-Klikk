@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/spritesheets/trainers/harald.png" type="Texture" id=1]
 [ext_resource path="res://source/actor/Actor.gd" type="Script" id=2]
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=1]
 resource_name = "move_down"
 length = 0.3
 tracks/0/type = "value"
@@ -19,8 +19,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2 ]
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "move_left"
+[sub_resource type="Animation" id=2]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("../Sprites/Sprite:frame")
@@ -35,8 +34,7 @@ tracks/0/keys = {
 "values": [ 9, 10, 11 ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "move_right"
+[sub_resource type="Animation" id=3]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("../Sprites/Sprite:frame")
@@ -51,8 +49,7 @@ tracks/0/keys = {
 "values": [ 27, 28, 29 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "move_up"
+[sub_resource type="Animation" id=4]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("../Sprites/Sprite:frame")
@@ -67,7 +64,7 @@ tracks/0/keys = {
 "values": [ 18, 19, 20 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 resource_name = "stand_down"
 tracks/0/type = "value"
 tracks/0/path = NodePath("../Sprites/Sprite:frame")
@@ -82,7 +79,7 @@ tracks/0/keys = {
 "values": [ 1 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 resource_name = "stand_left"
 tracks/0/type = "value"
 tracks/0/path = NodePath("../Sprites/Sprite:frame")
@@ -97,7 +94,7 @@ tracks/0/keys = {
 "values": [ 10 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=7]
 resource_name = "stand_right"
 tracks/0/type = "value"
 tracks/0/path = NodePath("../Sprites/Sprite:frame")
@@ -112,8 +109,7 @@ tracks/0/keys = {
 "values": [ 28 ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "stand_up"
+[sub_resource type="Animation" id=8]
 tracks/0/type = "value"
 tracks/0/path = NodePath("../Sprites/Sprite:frame")
 tracks/0/interp = 1
@@ -142,14 +138,14 @@ frame = 1
 [node name="Animation" type="Node2D" parent="."]
 
 [node name="BodyAnimation" type="AnimationPlayer" parent="Animation"]
-anims/move_down = SubResource( 4 )
-anims/move_left = SubResource( 1 )
-anims/move_right = SubResource( 2 )
-anims/move_up = SubResource( 3 )
-anims/stand_down = SubResource( 6 )
-anims/stand_left = SubResource( 7 )
-anims/stand_right = SubResource( 8 )
-anims/stand_up = SubResource( 5 )
+anims/move_down = SubResource( 1 )
+anims/move_left = SubResource( 2 )
+anims/move_right = SubResource( 3 )
+anims/move_up = SubResource( 4 )
+anims/stand_down = SubResource( 5 )
+anims/stand_left = SubResource( 6 )
+anims/stand_right = SubResource( 7 )
+anims/stand_up = SubResource( 8 )
 
 [node name="MovementTween" type="Tween" parent="."]
 [connection signal="tween_all_completed" from="MovementTween" to="." method="_on_MovementTween_tween_all_completed"]

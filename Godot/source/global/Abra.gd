@@ -15,7 +15,15 @@ var occupations = {}
 onready var helper_map : TileMap = $HelperMap
 
 func is_cell_blocked(pos):
-	pass
+	var blocked = false
+	if cells[pos].type in [CELL_TYPE.BLOCKED,CELL_TYPE.WATER,CELL_TYPE.WATER_DEEP] or cells[pos].occupied:
+		blocked = true
+	return blocked
+
+func is_pos_blocked(pos):
+	var c = helper_map.world_to_map(pos)
+	var blocked = is_cell_blocked(c)
+	return blocked
 
 func occupy_cell(pos):
 	if pos in occupations:

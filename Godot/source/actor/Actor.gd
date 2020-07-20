@@ -25,6 +25,9 @@ func _ready():
 	Abra.occupy_position(position)
 
 func move(_dir):
+	
+	if Abra.is_pos_blocked(position + _dir * cell_size): return
+	
 	change_state(STATES.MOVE)
 	dir = _dir
 	
