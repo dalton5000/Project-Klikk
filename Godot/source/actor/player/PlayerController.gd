@@ -7,9 +7,9 @@ func _input(event):
 	if player.state == player.STATES.IDLE:
 		if Input.is_action_pressed("ui_left"):
 			player.move(Vector2.LEFT)
-		if Input.is_action_pressed("ui_right"):
+		elif Input.is_action_pressed("ui_right"):
 			player.move(Vector2.RIGHT)
-		if Input.is_action_pressed("ui_up"):
+		elif Input.is_action_pressed("ui_up"):
 			player.move(Vector2.UP)
-		if Input.is_action_pressed("ui_down"):
+		elif Input.is_action_pressed("ui_down"):
 			player.move(Vector2.DOWN)
