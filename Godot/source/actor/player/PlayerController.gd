@@ -3,7 +3,7 @@ class_name PlayerController
 
 onready var player : Actor = owner
 
-func _input(event):
+func _process(delta: float) -> void:
 	if player.state == player.STATES.IDLE:
 		if Input.is_action_pressed("ui_left"):
 			player.move(Vector2.LEFT)
