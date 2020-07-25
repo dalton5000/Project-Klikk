@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://source/actor/npc/NPC.tscn" type="PackedScene" id=1]
 [ext_resource path="res://source/map/Map.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://source/overworld/Overworld.gd" type="Script" id=4]
 [ext_resource path="res://source/map/map_object/buildings/Pokecenter.tscn" type="PackedScene" id=5]
 [ext_resource path="res://source/map/map_object/trees/Tree1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://source/actor/interactable/Sign/Sign.tscn" type="PackedScene" id=7]
 
 [node name="Overworld" type="YSort"]
 script = ExtResource( 4 )
@@ -38,5 +39,9 @@ position = Vector2( 248, 216 )
 
 [node name="PokeCenter" parent="Objects/Buildings" instance=ExtResource( 5 )]
 position = Vector2( 264, -8 )
+
+[node name="Sign" parent="." instance=ExtResource( 7 )]
+position = Vector2( 200, 152 )
+interactable_text = "Rechts nach Bumsdorf"
 
 [editable path="Map"]
