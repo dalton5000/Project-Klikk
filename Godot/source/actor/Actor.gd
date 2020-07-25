@@ -1,6 +1,8 @@
 extends Interactable
 class_name Actor
 
+enum STATES {IDLE, MOVE, WAIT}
+
 signal start_idle
 signal start_move
 
@@ -14,7 +16,6 @@ var dir : Vector2 = Vector2.DOWN
 var current_anim := "idle"
 var next_anim := ""
 
-enum STATES {IDLE, MOVE, WAIT}
 var state = STATES.IDLE
 var last_state = STATES.IDLE
 
@@ -34,8 +35,9 @@ func move(_dir):
 	
 	change_state(STATES.MOVE)
 	body_anim.play("move" + anim_suffix)
-	$MovementTween.interpolate_property(self,"position",position,position + dir * cell_size,move_duration,Tween.TRANS_SINE,Tween.EASE_IN_OUT)
-	$MovementTween.start()
+	movement_tween.interpolate_property(self,"position", position,position + dir * cell_size,move_duration, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	movement_tween.start()
+	
 	Abra.free_position(position)
 	Abra.occupy_position(position + dir*cell_size)
 	Abra.free_interactable(position)
@@ -43,7 +45,7 @@ func move(_dir):
 
 func change_state(new_state):
 	last_state = state
-	state = new_state	
+	state = new_state
 	match new_state:
 		STATES.IDLE:
 			emit_signal("start_idle")
@@ -52,7 +54,7 @@ func change_state(new_state):
 			
 func move_completed():
 	var anim_suffix : String = get_anim_suffix_from_dir(dir)
-	body_anim.play("stand"+anim_suffix)
+	body_anim.play("stand" + anim_suffix)
 	change_state(STATES.IDLE)
 
 func _on_MovementTween_tween_all_completed():
