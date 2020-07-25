@@ -7,12 +7,14 @@ enum CELL_TYPE { GROUND, BLOCKED, GRASS_LOW, GRASS_HIGH, WATER, WATER_DEEP}
 var cell_data = {
 	"type": CELL_TYPE.GROUND,
 	"occupied": false,
-	"observed": false
+	"observed": false,
+	"interactable": false
 }
 
 var occupations = {}
 
 onready var helper_map : TileMap = $HelperMap
+
 
 func is_cell_blocked(pos):
 	if not cells.has(pos):
@@ -56,7 +58,23 @@ func free_position(pos):
 	
 func register_grass(pos, type):
 	cells[pos]["type"] = type
+	
+func register_interactable(pos, target):
+	var c = helper_map.world_to_map(pos)
+	cells[c]["interactable"] = target
+	
+func free_interactable(pos):
+	var c = helper_map.world_to_map(pos)
+	cells[c]["interactable"] = false
+	
 
+func is_interactable_on_cell(c: Vector2):
+	if cells[c]["interactable"]: return true
+	else: return false
+	
+func get_interactable_on_cell(c: Vector2) -> Interactable:
+	return cells[c]["interactable"]
+	
 func get_grass_map():
 	var grass_map = []
 	for cell in cells:
@@ -80,3 +98,11 @@ func init_map(rect):
 func unload_map():
 	cells = {}
 	occupations = {}
+
+
+
+func world_to_map(pos: Vector2) -> Vector2:
+	return helper_map.world_to_map(pos)
+
+func map_to_world(cell: Vector2) -> Vector2:
+	return helper_map.map_to_world(cell)

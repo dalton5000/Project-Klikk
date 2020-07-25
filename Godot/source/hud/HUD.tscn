@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://source/hud/DebugMenu/DebugMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/gui/monogram.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/gui/dialog/textbox-nes-export.png" type="Texture" id=3]
+[ext_resource path="res://source/hud/HUD.gd" type="Script" id=4]
+[ext_resource path="res://source/hud/DialogBox/DialogBox.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -40,6 +42,7 @@ anchor_bottom = 1.0
 margin_left = 1.43201
 margin_right = 1.43201
 theme = SubResource( 2 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -55,6 +58,7 @@ margin_top = 357.0
 margin_right = 911.0
 margin_bottom = 592.0
 custom_styles/panel = SubResource( 5 )
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -66,5 +70,5 @@ margin_right = 724.0
 margin_bottom = 202.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
-text = "Hello there! Welcome to the world of Pokémon! My name is Oak! People call me the Pokémon Prof! This world is inhabited by creatures called Pokémon! For some people, Pokémon are pets. Other use them for fights. Myself… I study Pokémon as a profession. First, what is your name? Right! So your name is "
+text = "Hello there! Welcome to the world of Pokémon! My name is Oak! People call me the Pokémon Prof! This world is inhabited by creatures called Pokémon! For some people, Pokémon are pets. Other use them for fights. Myself… I study Pokémon as a profession. First, what is your name? Right! So your name is ..?"
 autowrap = true

@@ -1,4 +1,4 @@
-extends Node2D
+extends Interactable
 class_name Actor
 
 signal start_idle
@@ -9,7 +9,7 @@ var cell_offset : int = cell_size / 2
 var move_duration := 0.3 # sec per cell
 
 var map_position : Vector2
-var dir : Vector2
+var dir : Vector2 = Vector2.DOWN
 
 var current_anim := "idle"
 var next_anim := ""
@@ -38,6 +38,8 @@ func move(_dir):
 	$MovementTween.start()
 	Abra.free_position(position)
 	Abra.occupy_position(position + dir*cell_size)
+	Abra.free_interactable(position)
+	Abra.register_interactable(position + dir*cell_size, self)
 
 func change_state(new_state):
 	last_state = state

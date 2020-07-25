@@ -6,5 +6,6 @@
 
 [node name="NPC" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
+interactable_text = "Ai gude wie mein Bub"
 
 [node name="NPCController" parent="." index="3" instance=ExtResource( 2 )]
