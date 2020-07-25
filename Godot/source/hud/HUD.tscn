@@ -2,7 +2,7 @@
 
 [ext_resource path="res://source/hud/DebugMenu/DebugMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/gui/monogram.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://assets/gui/dialog/textbox-nes-export.png" type="Texture" id=3]
+[ext_resource path="res://assets/gui/dialog/textbox-nes2-export.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -19,7 +19,7 @@ default_font = SubResource( 3 )
 
 [sub_resource type="StyleBoxTexture" id=5]
 texture = ExtResource( 3 )
-region_rect = Rect2( 0, 0, 68, 92 )
+region_rect = Rect2( 0, 0, 92, 92 )
 margin_left = 20.0
 margin_right = 50.0
 margin_top = 16.0
