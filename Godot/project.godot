@@ -34,11 +34,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://source/actor/npc/NPC.gd"
 }, {
-"base": "Node2D",
-"class": "Overworld",
-"language": "GDScript",
-"path": "res://source/overworld/Overworld.gd"
-}, {
 "base": "Actor",
 "class": "Player",
 "language": "GDScript",
@@ -60,7 +55,6 @@ _global_script_class_icons={
 "Loader": "",
 "MonsterData": "",
 "NPC": "",
-"Overworld": "",
 "Player": "",
 "PlayerController": "",
 "Portal": ""

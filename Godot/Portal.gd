@@ -8,6 +8,7 @@ export var exit_id = ""
 export (String, "Up", "Down", "Left", "Right") var entry_view_direction = "Down" setget set_entry_view_direction
 
 func set_entry_view_direction(dir):
+	if not is_inside_tree(): return
 	entry_view_direction = dir
 	
 	for child in $Markers.get_children(): child.hide()
@@ -40,8 +41,12 @@ func set_color():
 		self_modulate = Color.white
 
 func register_exit():
-	Abra.register_portal(position, exit_id)
+	Abra.register_exit(position, exit_id)
+	
+func register_entry():
+	Abra.register_entry(position, exit_id)
 
-func _ready():
-	hide()
-	register_exit()
+func _initialize():
+#	if not get_tree().is_editor_hint(): hide()
+	if entry: register_entry()
+	if exit: register_exit()

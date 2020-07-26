@@ -9,10 +9,11 @@ var cell_data = {
 	"occupied": false,
 	"observed": false,
 	"interactable": false,
-	"portal": false
+	"exit": false
 }
 
 var occupations = {}
+var entries = {}
 
 onready var helper_map : TileMap = $HelperMap
 
@@ -60,8 +61,11 @@ func free_position(pos):
 func register_grass(pos, type):
 	cells[pos]["type"] = type
 
-func register_portal(position, exit_id):
-	cells[world_to_map(position)]["portal"] = exit_id	
+func register_exit(position, exit_id):
+	cells[world_to_map(position)]["exit"] = exit_id	
+	
+func register_entry(position, exit_id):
+	entries[exit_id] = world_to_map(position)
 	
 func register_interactable(pos, target):
 	var c = helper_map.world_to_map(pos)
@@ -78,7 +82,21 @@ func is_interactable_on_cell(c: Vector2):
 	
 func get_interactable_on_cell(c: Vector2) -> Interactable:
 	return cells[c]["interactable"]
+
+func get_entry(entry_id: String) -> Vector2:
+	if entries.has(entry_id):
+		return entries[entry_id]
+	else:
+		print("asked for non existant entry_id, Abra not amused")
+		return Vector2.ZERO
+
+func has_cell_portal(c: Vector2) -> bool:
+	if cells[c].portal: return true
+	else: return false
 	
+func get_portal_on_cell(c: Vector2) -> String:
+	return cells[c]["portal"]
+
 func get_grass_map():
 	var grass_map = []
 	for cell in cells:
@@ -102,6 +120,7 @@ func init_map(rect):
 func unload_map():
 	cells = {}
 	occupations = {}
+	entries = {}
 
 
 

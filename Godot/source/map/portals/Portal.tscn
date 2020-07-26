@@ -7,11 +7,11 @@
 [node name="Portal" type="Sprite"]
 texture = ExtResource( 2 )
 script = ExtResource( 1 )
-entry_view_direction = "Left"
 
 [node name="Markers" type="Node2D" parent="."]
 
 [node name="Sprite" type="Sprite" parent="Markers"]
+visible = false
 position = Vector2( -6, 0 )
 texture = ExtResource( 3 )
 
@@ -27,7 +27,6 @@ rotation = 1.5708
 texture = ExtResource( 3 )
 
 [node name="Sprite4" type="Sprite" parent="Markers"]
-visible = false
 position = Vector2( 0, 6 )
 rotation = 1.5708
 texture = ExtResource( 3 )

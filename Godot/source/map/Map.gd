@@ -4,8 +4,8 @@ enum DEBUG_BLOCKS {WATER, MISC, GRASS, BLOCKED}
 
 var debug_visible = false
 
-onready var debug_map: TileMap = $Debug
-onready var grass_map: TileMap = $Grass
+onready var debug_map: TileMap = $Maps/Debug
+onready var grass_map: TileMap = $Maps/Grass
 
 onready var debug_tween: Tween = $DebugTween
 
@@ -14,6 +14,8 @@ func _ready():
 	Arceus.connect("cell_info_updated",self,"update_debug_map")
 	
 	register_tiles()
+	yield(get_tree().create_timer(0.15),"timeout")
+	propagate_call("_initialize")
 
 func toggle_debug_map():
 	if debug_tween.is_active(): return
@@ -37,7 +39,9 @@ func update_debug_map():
 
 func register_tiles():
 	
-	var size = $Ground.get_used_rect()
+	var size = $Maps/Ground.get_used_rect()
+	print("size:")
+	print(size)
 	Abra.init_map(size)
 	
 	register_grass()	

@@ -6,6 +6,8 @@ onready var tilemap = $TileMap
 
 func _ready():
 	tilemap.hide()
+	
+func _initialize():
 	register_cells()
 	
 func register_cells():
