@@ -133,10 +133,10 @@
 3/shapes = [  ]
 3/z_index = 0
 
-[node name="Map" type="Node2D"]
+[node name="Map" type="YSort"]
 script = ExtResource( 3 )
 
-[node name="Maps" type="YSort" parent="."]
+[node name="Maps" type="Node2D" parent="."]
 
 [node name="Ground" type="TileMap" parent="Maps"]
 tile_set = SubResource( 1 )

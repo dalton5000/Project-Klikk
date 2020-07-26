@@ -1,4 +1,4 @@
-extends Node2D
+extends YSort
 
 enum DEBUG_BLOCKS {WATER, MISC, GRASS, BLOCKED}
 
