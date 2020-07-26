@@ -4,7 +4,9 @@
 [ext_resource path="res://assets/tilesets/portal.png" type="Texture" id=2]
 [ext_resource path="res://assets/tilesets/portal_marker.png" type="Texture" id=3]
 
-[node name="Portal" type="Sprite"]
+[node name="Portal" type="Sprite" groups=[
+"portal",
+]]
 texture = ExtResource( 2 )
 script = ExtResource( 1 )
 

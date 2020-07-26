@@ -30,3 +30,7 @@ func _on_ShowButton_pressed():
 
 func _on_CellInfoButton_pressed():
 	Arceus.emit_signal("cell_info_pressed")
+
+
+func _on_PortalButton_pressed():
+	get_tree().call_group("portal", "toggle_visibility")

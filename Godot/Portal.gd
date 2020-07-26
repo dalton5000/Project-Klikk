@@ -56,6 +56,10 @@ func register_entry():
 	Abra.register_entry(position, entry_id, dir)
 
 func _initialize():
-#	if not get_tree().is_editor_hint(): hide()
+	hide()
 	if entry: register_entry()
 	if exit: register_exit()
+
+func toggle_visibility():
+	if visible: hide()
+	else: show()
