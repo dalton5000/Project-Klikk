@@ -14,7 +14,7 @@ func _ready():
 	Arceus.connect("cell_info_updated",self,"update_debug_map")
 	
 	register_tiles()
-	yield(get_tree().create_timer(0.15),"timeout")
+#	yield(get_tree().create_timer(0.15),"timeout")
 	propagate_call("_initialize")
 
 func toggle_debug_map():
@@ -28,6 +28,7 @@ func toggle_debug_map():
 	debug_visible = !debug_visible
 	
 func update_debug_map():
+	if not debug_visible: return
 	debug_map.clear()
 	var g_map = Abra.get_grass_map()
 	for cell in g_map:
