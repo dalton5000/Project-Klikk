@@ -4,12 +4,14 @@ tool
 
 export var entry = false setget set_entry
 export var exit = false setget set_exit
-export var exit_id = ""
+export var entry_id = ""
+export var exit_target = ""
+
 export (String, "Up", "Down", "Left", "Right") var entry_view_direction = "Down" setget set_entry_view_direction
 
 func set_entry_view_direction(dir):
-	if not is_inside_tree(): return
 	entry_view_direction = dir
+	if not is_inside_tree(): return
 	
 	for child in $Markers.get_children(): child.hide()
 	
@@ -41,10 +43,17 @@ func set_color():
 		self_modulate = Color.white
 
 func register_exit():
-	Abra.register_exit(position, exit_id)
+	Abra.register_exit(position, exit_target)
 	
 func register_entry():
-	Abra.register_entry(position, exit_id)
+	var dir := Vector2.ZERO
+	match entry_view_direction:
+		"Left": dir = Vector2.LEFT
+		"Right": dir = Vector2.RIGHT
+		"Up": dir = Vector2.UP
+		"Down": dir = Vector2.DOWN
+		
+	Abra.register_entry(position, entry_id, dir)
 
 func _initialize():
 #	if not get_tree().is_editor_hint(): hide()

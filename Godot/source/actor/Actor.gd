@@ -22,18 +22,20 @@ var last_state = STATES.IDLE
 onready var body_anim = $Animation/BodyAnimation
 onready var movement_tween = $MovementTween
 
+func turn(_dir): 
+	dir = _dir
+	var anim_suffix : String = get_anim_suffix_from_dir(dir)
+	body_anim.play("stand"+anim_suffix)
+
 func move(_dir):
 	
-	dir = _dir
-	
-	var anim_suffix : String = get_anim_suffix_from_dir(dir)
-		
 	if Abra.is_pos_blocked(position + _dir * cell_size):
-		body_anim.play("stand"+anim_suffix)
+		turn(_dir)
 		return
-	
-	
+		
+	dir = _dir
 	change_state(STATES.MOVE)
+	var anim_suffix : String = get_anim_suffix_from_dir(dir)
 	body_anim.play("move" + anim_suffix)
 	movement_tween.interpolate_property(self,"position", position,position + dir * cell_size,move_duration, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	movement_tween.start()

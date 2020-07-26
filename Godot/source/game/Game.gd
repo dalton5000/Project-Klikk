@@ -25,7 +25,10 @@ func load_new_room(room_id):
 		
 func load_player(entry_id):
 	player = player_scene.instance()
-	var player_pos = Abra.map_to_world( Abra.get_entry("IntroEntry") ) + Vector2(8,8)
+	var entry = Abra.get_entry("default")
+	var player_pos = Abra.map_to_world( entry["position"] ) + Vector2(8,8)
 	player.position = player_pos
 	world.add_child(player)
 	player._initialize()
+	yield(get_tree(),"idle_frame")
+	player.turn(entry["view_direction"])

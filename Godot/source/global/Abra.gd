@@ -64,8 +64,11 @@ func register_grass(pos, type):
 func register_exit(position, exit_id):
 	cells[world_to_map(position)]["exit"] = exit_id	
 	
-func register_entry(position, exit_id):
-	entries[exit_id] = world_to_map(position)
+func register_entry(position, exit_id, view_direction):
+	entries[exit_id] = {
+		"position": world_to_map(position),
+		"view_direction": view_direction
+		}
 	
 func register_interactable(pos, target):
 	var c = helper_map.world_to_map(pos)
@@ -83,12 +86,12 @@ func is_interactable_on_cell(c: Vector2):
 func get_interactable_on_cell(c: Vector2) -> Interactable:
 	return cells[c]["interactable"]
 
-func get_entry(entry_id: String) -> Vector2:
+func get_entry(entry_id: String):
 	if entries.has(entry_id):
 		return entries[entry_id]
 	else:
 		print("asked for non existant entry_id, Abra not amused")
-		return Vector2.ZERO
+		return {"position":Vector2.ZERO, "entry":"default"}
 
 func has_cell_portal(c: Vector2) -> bool:
 	if cells[c].portal: return true
