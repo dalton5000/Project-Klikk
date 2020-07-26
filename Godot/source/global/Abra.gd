@@ -8,7 +8,8 @@ var cell_data = {
 	"type": CELL_TYPE.GROUND,
 	"occupied": false,
 	"observed": false,
-	"interactable": false
+	"interactable": false,
+	"portal": false
 }
 
 var occupations = {}
@@ -58,6 +59,9 @@ func free_position(pos):
 	
 func register_grass(pos, type):
 	cells[pos]["type"] = type
+
+func register_portal(position, exit_id):
+	cells[world_to_map(position)]["portal"] = exit_id	
 	
 func register_interactable(pos, target):
 	var c = helper_map.world_to_map(pos)

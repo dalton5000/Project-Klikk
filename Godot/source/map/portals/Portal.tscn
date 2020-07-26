@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Portal.gd" type="Script" id=1]
+[ext_resource path="res://assets/tilesets/portal.png" type="Texture" id=2]
+[ext_resource path="res://assets/tilesets/portal_marker.png" type="Texture" id=3]
+
+[node name="Portal" type="Sprite"]
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
+entry_view_direction = "Left"
+
+[node name="Markers" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Markers"]
+position = Vector2( -6, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="Markers"]
+visible = false
+position = Vector2( 6, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="Markers"]
+visible = false
+position = Vector2( 0, -6 )
+rotation = 1.5708
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="Markers"]
+visible = false
+position = Vector2( 0, 6 )
+rotation = 1.5708
+texture = ExtResource( 3 )

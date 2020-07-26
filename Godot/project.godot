@@ -48,6 +48,11 @@ _global_script_classes=[ {
 "class": "PlayerController",
 "language": "GDScript",
 "path": "res://source/actor/player/PlayerController.gd"
+}, {
+"base": "Sprite",
+"class": "Portal",
+"language": "GDScript",
+"path": "res://Portal.gd"
 } ]
 _global_script_class_icons={
 "Actor": "",
@@ -57,7 +62,8 @@ _global_script_class_icons={
 "NPC": "",
 "Overworld": "",
 "Player": "",
-"PlayerController": ""
+"PlayerController": "",
+"Portal": ""
 }
 
 [application]
