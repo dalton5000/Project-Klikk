@@ -61,7 +61,12 @@ func move_completed():
 
 func _on_MovementTween_tween_all_completed():
 	if state == STATES.MOVE:
-		move_completed()
+		
+		if Abra.has_cell_exit(Abra.world_to_map(position)):
+			Arceus.emit_signal("stepped_on_exit")
+		else:
+			move_completed()
+			
 
 func get_anim_suffix_from_dir(dir):
 	var anim_suffix = ""

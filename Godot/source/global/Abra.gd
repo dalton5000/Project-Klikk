@@ -91,14 +91,25 @@ func get_entry(entry_id: String):
 		return entries[entry_id]
 	else:
 		print("asked for non existant entry_id, Abra not amused")
-		return {"position":Vector2.ZERO, "entry":"default"}
+		return entries["default"]
 
-func has_cell_portal(c: Vector2) -> bool:
-	if cells[c].portal: return true
+func has_cell_exit(c: Vector2) -> bool:
+	if cells[c]["exit"]: return true
 	else: return false
 	
-func get_portal_on_cell(c: Vector2) -> String:
-	return cells[c]["portal"]
+func get_exit_on_cell(c: Vector2):
+	var string : String = cells[c]["exit"]
+	var room
+	var entry
+	
+	if ":" in string:
+		room = string.split(":")[0]
+		entry = string.split(":")[1]
+	else:
+		room = string
+		entry = "default"
+		
+	return { "room": room, "entry": entry }
 
 func get_grass_map():
 	var grass_map = []
