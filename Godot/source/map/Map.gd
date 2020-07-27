@@ -9,7 +9,6 @@ onready var debug_map: TileMap = $Maps/Debug
 onready var grass_map: TileMap = $Maps/Grass
 
 onready var debug_tween: Tween = $DebugTween
-onready var transition_cam: Camera2D = $TransitionCamera
 
 func _ready():
 	Arceus.connect("cell_info_pressed",self,"toggle_debug_map")
@@ -59,9 +58,14 @@ func register_grass():
 func register_blocks():
 	pass
 
-func move_cam_to_portal(p_name:String) -> void:
-	var pos = get_node("Portals/"+ p_name).position
-	transition_cam.position = pos
+func get_portal_direction(p_id: String) -> Vector2:
+	var string = get_node("Portals/"+ p_id).entry_view_direction
+	var dir := Vector2.ZERO
+	match string:
+		"Left": dir = Vector2.LEFT
+		"Right": dir = Vector2.RIGHT
+		"Up": dir = Vector2.UP
+		"Down": dir = Vector2.DOWN
+	return dir
+	
 
-func disable_cam() -> void:
-	transition_cam.current = false

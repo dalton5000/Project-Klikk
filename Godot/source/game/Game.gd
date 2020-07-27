@@ -14,11 +14,9 @@ func _ready():
 func change_room(new_room_id, entry_id):
 	unload_current_room() 
 	load_new_room(new_room_id)
-	current_room.move_cam_to_portal(entry_id)
+	load_player(entry_id)
 	
 	yield(get_tree().create_timer(0.3), "timeout")
-	load_player(entry_id)
-	current_room.disable_cam()
 	
 func unload_current_room():
 	Abra.unload_map()
@@ -34,11 +32,11 @@ func load_player(entry_id):
 	var entry = Abra.get_entry(entry_id)
 	var player_pos = Abra.map_to_world( entry["position"] ) + Vector2(8,8)
 	player.position = player_pos
-	world.add_child(player)
 	player._initialize()
-	yield(get_tree(),"idle_frame")
+	world.add_child(player)
 	player.turn(entry["view_direction"])
-	
+
+
 func on_stepped_on_exit():
 	var exit = Abra.get_exit_on_cell(Abra.world_to_map(player.position))
 	print(exit["room"])
