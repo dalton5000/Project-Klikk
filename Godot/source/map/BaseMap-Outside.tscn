@@ -162,3 +162,6 @@ format = 1
 [node name="Objects" type="YSort" parent="."]
 
 [node name="DebugTween" type="Tween" parent="."]
+
+[node name="TransitionCamera" type="Camera2D" parent="."]
+current = true

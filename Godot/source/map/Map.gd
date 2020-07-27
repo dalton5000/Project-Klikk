@@ -1,4 +1,5 @@
 extends YSort
+class_name Map
 
 enum DEBUG_BLOCKS {WATER, MISC, GRASS, BLOCKED}
 
@@ -8,6 +9,7 @@ onready var debug_map: TileMap = $Maps/Debug
 onready var grass_map: TileMap = $Maps/Grass
 
 onready var debug_tween: Tween = $DebugTween
+onready var transition_cam: Camera2D = $TransitionCamera
 
 func _ready():
 	Arceus.connect("cell_info_pressed",self,"toggle_debug_map")
@@ -56,3 +58,10 @@ func register_grass():
 		
 func register_blocks():
 	pass
+
+func move_cam_to_portal(p_name:String) -> void:
+	var pos = get_node("Portals/"+ p_name).position
+	transition_cam.position = pos
+
+func disable_cam() -> void:
+	transition_cam.current = false
