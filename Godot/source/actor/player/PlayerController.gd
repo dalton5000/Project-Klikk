@@ -32,11 +32,11 @@ func _process(delta: float) -> void:
 		
 		if input_dir != Vector2.ZERO:
 			input_timer += delta
-			if input_dir != last_input_dir:
+			if input_dir != last_input_dir and not sprint_pressed:
 				player.turn(input_dir)
 				last_input_dir = input_dir
 				input_timer = 0.0
-			elif input_timer > turn_delay:
+			elif input_timer > turn_delay or sprint_pressed:
 				player.move(input_dir, sprint_pressed)
 				
 		else:
