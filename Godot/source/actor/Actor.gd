@@ -10,6 +10,8 @@ var cell_size : int = Settings.cell_size
 var cell_offset : int = cell_size / 2
 var move_duration := 0.3 # sec per cell
 
+var sprint_speed_scale = 2.5
+
 var map_position : Vector2
 var dir : Vector2 = Vector2.DOWN
 
@@ -19,15 +21,17 @@ var next_anim := ""
 var state = STATES.IDLE
 var last_state = STATES.IDLE
 
-onready var body_anim = $Animation/BodyAnimation
+onready var body_anim: AnimationPlayer = $Animation/BodyAnimation
 onready var movement_tween = $MovementTween
 
-func turn(_dir): 
+func turn(_dir: Vector2): 
 	dir = _dir
 	var anim_suffix : String = get_anim_suffix_from_dir(dir)
-	body_anim.play("stand"+anim_suffix)
+	body_anim.play("stand" + anim_suffix)
 
-func move(_dir):
+func move(_dir: Vector2, sprint := false) -> void:
+	
+	var speed = sprint_speed_scale if sprint else 1.0
 	
 	if Abra.is_pos_blocked(position + _dir * cell_size):
 		turn(_dir)
@@ -36,8 +40,9 @@ func move(_dir):
 	dir = _dir
 	change_state(STATES.MOVE)
 	var anim_suffix : String = get_anim_suffix_from_dir(dir)
-	body_anim.play("move" + anim_suffix)
-	movement_tween.interpolate_property(self,"position", position,position + dir * cell_size,move_duration, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	print(speed)
+	body_anim.play("move" + anim_suffix, -1, speed, false)
+	movement_tween.interpolate_property(self,"position", position,position + dir * cell_size,move_duration / speed, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	movement_tween.start()
 	
 	Abra.free_position(position)
