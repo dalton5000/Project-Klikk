@@ -132,9 +132,9 @@ func init_map(rect):
 			cells[Vector2(x + rect.position.x,y+ rect.position.y)] = cell_data.duplicate(true)
 
 func unload_map():
-	cells = {}
-	occupations = {}
-	entries = {}
+	cells.clear()
+	occupations.clear()
+	entries.clear()
 
 
 
