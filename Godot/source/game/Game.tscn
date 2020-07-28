@@ -12,6 +12,3 @@ scale = Vector2( 2, 2 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource( 2 )]
-margin_left = 0.0
-margin_right = 1024.0
-margin_bottom = 600.0

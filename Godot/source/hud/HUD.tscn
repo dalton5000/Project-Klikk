@@ -37,10 +37,8 @@ margin_top = 12.0
 margin_bottom = 14.0
 
 [node name="HUD" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 1.43201
-margin_right = 1.43201
+margin_right = 1024.0
+margin_bottom = 600.0
 theme = SubResource( 2 )
 script = ExtResource( 4 )
 __meta__ = {
@@ -48,15 +46,22 @@ __meta__ = {
 }
 
 [node name="DebugMenu" parent="." instance=ExtResource( 1 )]
-margin_left = -180.0
+margin_left = -184.0
+margin_right = 0.0
 margin_bottom = 142.0
 theme = SubResource( 4 )
 
 [node name="DialogBox" type="PanelContainer" parent="."]
-margin_left = 143.0
-margin_top = 357.0
-margin_right = 911.0
-margin_bottom = 592.0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -384.0
+margin_top = -200.0
+margin_right = 384.0
+margin_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 0
 custom_styles/panel = SubResource( 5 )
 script = ExtResource( 5 )
 __meta__ = {
@@ -65,9 +70,10 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="DialogBox"]
 margin_left = 20.0
-margin_top = 31.0
+margin_top = 12.0
 margin_right = 724.0
-margin_bottom = 202.0
+margin_bottom = 183.0
+rect_pivot_offset = Vector2( 0.5, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "Hello there! Welcome to the world of Pokémon! My name is Oak! People call me the Pokémon Prof! This world is inhabited by creatures called Pokémon! For some people, Pokémon are pets. Other use them for fights. Myself… I study Pokémon as a profession. First, what is your name? Right! So your name is ..?"

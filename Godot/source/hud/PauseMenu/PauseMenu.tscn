@@ -1,0 +1,249 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://source/hud/PauseMenu/PauseMenu.gd" type="Script" id=1]
+[ext_resource path="res://source/hud/theme.tres" type="Theme" id=2]
+
+[node name="DebugMenu" type="PanelContainer"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -184.0
+margin_top = -160.0
+margin_right = 1.00012
+margin_bottom = 170.0
+grow_vertical = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonContainer" type="VBoxContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 178.0
+margin_bottom = 323.0
+alignment = 1
+
+[node name="Pokedex" type="Button" parent="ButtonContainer"]
+margin_right = 171.0
+margin_bottom = 36.0
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+
+[node name="SelectLabel" type="Label" parent="ButtonContainer/Pokedex"]
+margin_left = 4.0
+margin_top = 3.0
+margin_right = 34.0
+margin_bottom = 31.0
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DescLabel" type="Label" parent="ButtonContainer/Pokedex/SelectLabel"]
+margin_left = 36.0
+margin_right = 162.0
+margin_bottom = 30.0
+theme = ExtResource( 2 )
+text = "POKEDEX"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pokemon" type="Button" parent="ButtonContainer"]
+margin_top = 40.0
+margin_right = 171.0
+margin_bottom = 76.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+
+[node name="SelectLabel" type="Label" parent="ButtonContainer/Pokemon"]
+margin_left = 4.0
+margin_top = 3.0
+margin_right = 34.0
+margin_bottom = 33.0
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DescLabel" type="Label" parent="ButtonContainer/Pokemon/SelectLabel"]
+margin_left = 36.0
+margin_right = 162.0
+margin_bottom = 30.0
+theme = ExtResource( 2 )
+text = "POKEMON"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bag" type="Button" parent="ButtonContainer"]
+margin_top = 80.0
+margin_right = 171.0
+margin_bottom = 116.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+
+[node name="SelectLabel" type="Label" parent="ButtonContainer/Bag"]
+margin_left = 4.0
+margin_top = 3.0
+margin_right = 34.0
+margin_bottom = 33.0
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DescLabel" type="Label" parent="ButtonContainer/Bag/SelectLabel"]
+margin_left = 36.0
+margin_right = 162.0
+margin_bottom = 30.0
+theme = ExtResource( 2 )
+text = "BAG"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Map" type="Button" parent="ButtonContainer"]
+margin_top = 120.0
+margin_right = 171.0
+margin_bottom = 156.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+
+[node name="SelectLabel" type="Label" parent="ButtonContainer/Map"]
+margin_left = 4.0
+margin_top = 3.0
+margin_right = 34.0
+margin_bottom = 33.0
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DescLabel" type="Label" parent="ButtonContainer/Map/SelectLabel"]
+margin_left = 36.0
+margin_right = 162.0
+margin_bottom = 30.0
+theme = ExtResource( 2 )
+text = "MAP"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Trainer" type="Button" parent="ButtonContainer"]
+margin_top = 160.0
+margin_right = 171.0
+margin_bottom = 196.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+
+[node name="SelectLabel" type="Label" parent="ButtonContainer/Trainer"]
+margin_left = 4.0
+margin_top = 3.0
+margin_right = 34.0
+margin_bottom = 33.0
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DescLabel" type="Label" parent="ButtonContainer/Trainer/SelectLabel"]
+margin_left = 36.0
+margin_right = 162.0
+margin_bottom = 30.0
+theme = ExtResource( 2 )
+text = "TRAINER"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Save" type="Button" parent="ButtonContainer"]
+margin_top = 200.0
+margin_right = 171.0
+margin_bottom = 236.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+
+[node name="SelectLabel" type="Label" parent="ButtonContainer/Save"]
+margin_left = 4.0
+margin_top = 3.0
+margin_right = 34.0
+margin_bottom = 33.0
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DescLabel" type="Label" parent="ButtonContainer/Save/SelectLabel"]
+margin_left = 36.0
+margin_right = 162.0
+margin_bottom = 30.0
+rect_pivot_offset = Vector2( 40.9032, 15 )
+theme = ExtResource( 2 )
+text = "SAVE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Options" type="Button" parent="ButtonContainer"]
+margin_top = 240.0
+margin_right = 171.0
+margin_bottom = 276.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+
+[node name="SelectLabel" type="Label" parent="ButtonContainer/Options"]
+margin_left = 4.0
+margin_top = 3.0
+margin_right = 34.0
+margin_bottom = 33.0
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DescLabel" type="Label" parent="ButtonContainer/Options/SelectLabel"]
+margin_left = 36.0
+margin_right = 162.0
+margin_bottom = 30.0
+theme = ExtResource( 2 )
+text = "OPTIONS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Close" type="Button" parent="ButtonContainer"]
+margin_top = 280.0
+margin_right = 171.0
+margin_bottom = 316.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+
+[node name="SelectLabel" type="Label" parent="ButtonContainer/Close"]
+margin_left = 4.0
+margin_top = 3.0
+margin_right = 34.0
+margin_bottom = 33.0
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DescLabel" type="Label" parent="ButtonContainer/Close/SelectLabel"]
+margin_left = 36.0
+margin_right = 162.0
+margin_bottom = 30.0
+theme = ExtResource( 2 )
+text = "CLOSE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
