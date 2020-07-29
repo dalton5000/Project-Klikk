@@ -2,6 +2,10 @@ extends Node2D
 
 onready var world = $World
 
+enum GAME_STATE {LOADING, MAP, MENU, DIALOG, COMBAT, CUTSCENE}
+
+var state = GAME_STATE.LOADING
+
 var player_scene := preload("res://source/actor/player/Player.tscn")
 var player : Player
 var current_room : Map
@@ -9,7 +13,17 @@ var current_room : Map
 
 func _ready():
 	change_room("Testland-intro", "default")
-	Arceus.connect("stepped_on_exit",self,"on_stepped_on_exit")
+	Arceus.connect("stepped_on_exit",self,"on_stepped_on_exit")	
+	Arceus.connect("dialog_started",self,"on_dialog_start")
+	Arceus.connect("dialog_ended",self,"on_dialog_end")
+	
+func change_game_state(new_state):
+	state = new_state
+	match new_state:
+		GAME_STATE.MENU, GAME_STATE.DIALOG, GAME_STATE.LOADING, GAME_STATE.COMBAT, GAME_STATE.CUTSCENE:
+			player.change_state(player.STATES.WAIT)
+		GAME_STATE.MAP:
+			player.change_state(player.STATES.IDLE)
 	
 func change_room(new_room_id, entry_id):
 	unload_current_room() 
@@ -42,3 +56,9 @@ func on_stepped_on_exit():
 	print(exit["room"])
 	print(exit["entry"])
 	change_room(exit["room"], exit["entry"])
+
+func on_dialog_start():
+	change_game_state(GAME_STATE.DIALOG)
+
+func on_dialog_end():
+	change_game_state(GAME_STATE.MAP)

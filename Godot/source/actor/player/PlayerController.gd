@@ -9,10 +9,7 @@ var last_input_dir := Vector2.ZERO
 var sprint_pressed := false
 
 func _ready():
-	
-	
-	Arceus.connect("dialog_started",self,"on_dialog_start")
-	Arceus.connect("dialog_ended",self,"on_dialog_end")
+	pass
 	
 func _process(delta: float) -> void:
 	
@@ -49,8 +46,3 @@ func _process(delta: float) -> void:
 			if Abra.is_interactable_on_cell(cell):
 				Abra.get_interactable_on_cell(cell)._interact()
 				
-func on_dialog_start():
-	player.change_state(player.STATES.WAIT)
-
-func on_dialog_end():
-	player.change_state(player.STATES.IDLE)
