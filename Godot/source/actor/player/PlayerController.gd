@@ -16,7 +16,9 @@ func _process(delta: float) -> void:
 	var input_dir := Vector2.ZERO
 	
 	if player.state == player.STATES.IDLE:
-		if Input.is_action_pressed("ui_left"):			
+		if   Input.is_action_just_pressed("menu"):
+			Arceus.emit_signal("pause_menu_open")
+		elif Input.is_action_pressed("ui_left"):			
 			input_dir = Vector2.LEFT
 		elif Input.is_action_pressed("ui_right"):
 			input_dir = Vector2.RIGHT

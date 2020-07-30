@@ -16,6 +16,8 @@ func _ready():
 	Arceus.connect("stepped_on_exit",self,"on_stepped_on_exit")	
 	Arceus.connect("dialog_started",self,"on_dialog_start")
 	Arceus.connect("dialog_ended",self,"on_dialog_end")
+	Arceus.connect("pause_menu_open", self, "on_pause_menu_open")
+	Arceus.connect("pause_menu_close", self, "on_pause_menu_close")
 	
 func change_game_state(new_state):
 	state = new_state
@@ -61,4 +63,13 @@ func on_dialog_start():
 	change_game_state(GAME_STATE.DIALOG)
 
 func on_dialog_end():
+	change_game_state(GAME_STATE.MAP)
+	
+func on_pause_menu_open():
+	change_game_state(GAME_STATE.MENU)
+	var pause_menu = load("res://source/hud/PauseMenu/PauseMenu.tscn").instance()
+	find_node("HUD").add_child(pause_menu)
+	print(pause_menu.name)
+	
+func on_pause_menu_close():
 	change_game_state(GAME_STATE.MAP)
