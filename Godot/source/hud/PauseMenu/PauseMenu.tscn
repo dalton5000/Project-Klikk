@@ -30,14 +30,12 @@ alignment = 1
 margin_right = 171.0
 margin_bottom = 36.0
 size_flags_vertical = 3
-theme = ExtResource( 2 )
 
 [node name="SelectLabel" type="Label" parent="ButtonContainer/Pokedex"]
 margin_left = 4.0
 margin_top = 3.0
 margin_right = 34.0
 margin_bottom = 31.0
-theme = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -57,14 +55,12 @@ margin_right = 171.0
 margin_bottom = 76.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 2 )
 
 [node name="SelectLabel" type="Label" parent="ButtonContainer/Pokemon"]
 margin_left = 4.0
 margin_top = 3.0
 margin_right = 34.0
 margin_bottom = 33.0
-theme = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -84,14 +80,12 @@ margin_right = 171.0
 margin_bottom = 116.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 2 )
 
 [node name="SelectLabel" type="Label" parent="ButtonContainer/Bag"]
 margin_left = 4.0
 margin_top = 3.0
 margin_right = 34.0
 margin_bottom = 33.0
-theme = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -111,14 +105,12 @@ margin_right = 171.0
 margin_bottom = 156.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 2 )
 
 [node name="SelectLabel" type="Label" parent="ButtonContainer/Map"]
 margin_left = 4.0
 margin_top = 3.0
 margin_right = 34.0
 margin_bottom = 33.0
-theme = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -138,14 +130,12 @@ margin_right = 171.0
 margin_bottom = 196.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 2 )
 
 [node name="SelectLabel" type="Label" parent="ButtonContainer/Trainer"]
 margin_left = 4.0
 margin_top = 3.0
 margin_right = 34.0
 margin_bottom = 33.0
-theme = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -165,14 +155,12 @@ margin_right = 171.0
 margin_bottom = 236.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 2 )
 
 [node name="SelectLabel" type="Label" parent="ButtonContainer/Save"]
 margin_left = 4.0
 margin_top = 3.0
 margin_right = 34.0
 margin_bottom = 33.0
-theme = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -193,14 +181,12 @@ margin_right = 171.0
 margin_bottom = 276.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 2 )
 
 [node name="SelectLabel" type="Label" parent="ButtonContainer/Options"]
 margin_left = 4.0
 margin_top = 3.0
 margin_right = 34.0
 margin_bottom = 33.0
-theme = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -220,14 +206,12 @@ margin_right = 171.0
 margin_bottom = 316.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 2 )
 
 [node name="SelectLabel" type="Label" parent="ButtonContainer/Close"]
 margin_left = 4.0
 margin_top = 3.0
 margin_right = 34.0
 margin_bottom = 33.0
-theme = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
