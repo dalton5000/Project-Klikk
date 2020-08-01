@@ -5,9 +5,9 @@
 [node name="DebugMenu" type="PanelContainer"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -195.0
-margin_right = -2.0
-margin_bottom = 148.0
+margin_left = -221.0
+margin_right = -27.0
+margin_bottom = 124.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -15,11 +15,23 @@ __meta__ = {
 
 [node name="SlideTween" type="Tween" parent="."]
 
+[node name="ShowButton" type="Button" parent="SlideTween"]
+margin_left = 998.836
+margin_top = 2.0
+margin_right = 1020.84
+margin_bottom = 22.0
+focus_mode = 0
+enabled_focus_mode = 0
+text = "D"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 187.0
-margin_bottom = 141.0
+margin_bottom = 117.0
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 margin_right = 180.0
@@ -137,14 +149,6 @@ margin_bottom = 20.0
 focus_mode = 0
 enabled_focus_mode = 0
 text = "Button"
-
-[node name="ShowButton" type="Button" parent="VBoxContainer"]
-margin_top = 114.0
-margin_right = 180.0
-margin_bottom = 134.0
-focus_mode = 0
-enabled_focus_mode = 0
-text = "Show / Hide Debug"
+[connection signal="pressed" from="SlideTween/ShowButton" to="." method="_on_ShowButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/Row1/CellInfoButton" to="." method="_on_CellInfoButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/Row1/PortalButton" to="." method="_on_PortalButton_pressed"]
-[connection signal="pressed" from="VBoxContainer/ShowButton" to="." method="_on_ShowButton_pressed"]

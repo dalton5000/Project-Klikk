@@ -1,6 +1,6 @@
 extends PanelContainer
 
-var offset := 32
+var offset := 0
 var expanded := false
 var expanding := false
 var slide_duration = 0.2
@@ -9,7 +9,7 @@ onready var slide_tween = $SlideTween
 func _ready():
 #	offset = rect_size.y
 	rect_position.y = -rect_size.y + offset
-	slide()
+#	slide()
 
 func slide():
 	if $SlideTween.is_active(): return
