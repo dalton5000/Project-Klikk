@@ -33,7 +33,7 @@ __meta__ = {
 [node name="DebugMenu" parent="." instance=ExtResource( 1 )]
 margin_left = -184.0
 margin_right = 0.0
-margin_bottom = 142.0
+margin_bottom = 119.0
 theme = SubResource( 4 )
 
 [node name="DialogBox" type="PanelContainer" parent="."]

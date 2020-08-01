@@ -1,34 +1,48 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://source/hud/PauseMenu/PauseMenu.gd" type="Script" id=1]
 [ext_resource path="res://source/hud/theme.tres" type="Theme" id=2]
+[ext_resource path="res://assets/gui/bg_panel-export.png" type="Texture" id=3]
+
+[sub_resource type="StyleBoxTexture" id=1]
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 32, 32 )
+margin_left = 5.0
+margin_right = 5.0
+margin_top = 5.0
+margin_bottom = 5.0
 
 [node name="PauseMenu" type="PanelContainer"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -184.0
-margin_top = -160.0
-margin_right = 1.00012
-margin_bottom = 170.0
+margin_left = -185.0
+margin_top = -172.0
+margin_right = 0.00012207
+margin_bottom = 184.0
 grow_vertical = 2
 theme = ExtResource( 2 )
+custom_styles/panel = SubResource( 1 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ButtonContainer" type="VBoxContainer" parent="."]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 178.0
-margin_bottom = 323.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 181.0
+margin_bottom = 352.0
 alignment = 1
 
 [node name="Pokedex" type="Button" parent="ButtonContainer"]
-margin_right = 171.0
-margin_bottom = 36.0
+margin_right = 177.0
+margin_bottom = 40.0
 size_flags_vertical = 3
 
 [node name="SelectLabel" type="Label" parent="ButtonContainer/Pokedex"]
@@ -36,6 +50,7 @@ margin_left = 4.0
 margin_top = 3.0
 margin_right = 34.0
 margin_bottom = 31.0
+custom_colors/font_color = Color( 0.92549, 0.92549, 0.92549, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -44,15 +59,16 @@ __meta__ = {
 margin_left = 36.0
 margin_right = 162.0
 margin_bottom = 30.0
+custom_colors/font_color = Color( 0.92549, 0.92549, 0.92549, 1 )
 text = "POKEDEX"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Pokemon" type="Button" parent="ButtonContainer"]
-margin_top = 40.0
-margin_right = 171.0
-margin_bottom = 76.0
+margin_top = 44.0
+margin_right = 177.0
+margin_bottom = 84.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -61,6 +77,7 @@ margin_left = 4.0
 margin_top = 3.0
 margin_right = 34.0
 margin_bottom = 33.0
+custom_colors/font_color = Color( 0.92549, 0.92549, 0.92549, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -69,15 +86,16 @@ __meta__ = {
 margin_left = 36.0
 margin_right = 162.0
 margin_bottom = 30.0
+custom_colors/font_color = Color( 0.92549, 0.92549, 0.92549, 1 )
 text = "POKEMON"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Bag" type="Button" parent="ButtonContainer"]
-margin_top = 80.0
-margin_right = 171.0
-margin_bottom = 116.0
+margin_top = 88.0
+margin_right = 177.0
+margin_bottom = 128.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -86,6 +104,7 @@ margin_left = 4.0
 margin_top = 3.0
 margin_right = 34.0
 margin_bottom = 33.0
+custom_colors/font_color = Color( 0.92549, 0.92549, 0.92549, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -94,15 +113,16 @@ __meta__ = {
 margin_left = 36.0
 margin_right = 162.0
 margin_bottom = 30.0
+custom_colors/font_color = Color( 0.92549, 0.92549, 0.92549, 1 )
 text = "BAG"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Map" type="Button" parent="ButtonContainer"]
-margin_top = 120.0
-margin_right = 171.0
-margin_bottom = 156.0
+margin_top = 132.0
+margin_right = 177.0
+margin_bottom = 172.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -111,6 +131,7 @@ margin_left = 4.0
 margin_top = 3.0
 margin_right = 34.0
 margin_bottom = 33.0
+custom_colors/font_color = Color( 0.92549, 0.92549, 0.92549, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -119,15 +140,16 @@ __meta__ = {
 margin_left = 36.0
 margin_right = 162.0
 margin_bottom = 30.0
+custom_colors/font_color = Color( 0.92549, 0.92549, 0.92549, 1 )
 text = "MAP"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Trainer" type="Button" parent="ButtonContainer"]
-margin_top = 160.0
-margin_right = 171.0
-margin_bottom = 196.0
+margin_top = 176.0
+margin_right = 177.0
+margin_bottom = 216.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -136,6 +158,7 @@ margin_left = 4.0
 margin_top = 3.0
 margin_right = 34.0
 margin_bottom = 33.0
+custom_colors/font_color = Color( 0.92549, 0.92549, 0.92549, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -144,15 +167,16 @@ __meta__ = {
 margin_left = 36.0
 margin_right = 162.0
 margin_bottom = 30.0
+custom_colors/font_color = Color( 0.92549, 0.92549, 0.92549, 1 )
 text = "TRAINER"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Save" type="Button" parent="ButtonContainer"]
-margin_top = 200.0
-margin_right = 171.0
-margin_bottom = 236.0
+margin_top = 220.0
+margin_right = 177.0
+margin_bottom = 260.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -161,6 +185,7 @@ margin_left = 4.0
 margin_top = 3.0
 margin_right = 34.0
 margin_bottom = 33.0
+custom_colors/font_color = Color( 0.92549, 0.92549, 0.92549, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -170,15 +195,16 @@ margin_left = 36.0
 margin_right = 162.0
 margin_bottom = 30.0
 rect_pivot_offset = Vector2( 40.9032, 15 )
+custom_colors/font_color = Color( 0.92549, 0.92549, 0.92549, 1 )
 text = "SAVE"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Options" type="Button" parent="ButtonContainer"]
-margin_top = 240.0
-margin_right = 171.0
-margin_bottom = 276.0
+margin_top = 264.0
+margin_right = 177.0
+margin_bottom = 304.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -187,6 +213,7 @@ margin_left = 4.0
 margin_top = 3.0
 margin_right = 34.0
 margin_bottom = 33.0
+custom_colors/font_color = Color( 0.92549, 0.92549, 0.92549, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -195,15 +222,16 @@ __meta__ = {
 margin_left = 36.0
 margin_right = 162.0
 margin_bottom = 30.0
+custom_colors/font_color = Color( 0.92549, 0.92549, 0.92549, 1 )
 text = "OPTIONS"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Close" type="Button" parent="ButtonContainer"]
-margin_top = 280.0
-margin_right = 171.0
-margin_bottom = 316.0
+margin_top = 308.0
+margin_right = 177.0
+margin_bottom = 348.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -212,6 +240,7 @@ margin_left = 4.0
 margin_top = 3.0
 margin_right = 34.0
 margin_bottom = 33.0
+custom_colors/font_color = Color( 0.92549, 0.92549, 0.92549, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -220,6 +249,7 @@ __meta__ = {
 margin_left = 36.0
 margin_right = 162.0
 margin_bottom = 30.0
+custom_colors/font_color = Color( 0.92549, 0.92549, 0.92549, 1 )
 text = "CLOSE"
 __meta__ = {
 "_edit_use_anchors_": false
