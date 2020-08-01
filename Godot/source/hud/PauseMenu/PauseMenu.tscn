@@ -13,6 +13,7 @@ margin_top = -160.0
 margin_right = 1.00012
 margin_bottom = 170.0
 grow_vertical = 2
+theme = ExtResource( 2 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -45,7 +46,6 @@ __meta__ = {
 margin_left = 36.0
 margin_right = 162.0
 margin_bottom = 30.0
-theme = ExtResource( 2 )
 text = "POKEDEX"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -73,7 +73,6 @@ __meta__ = {
 margin_left = 36.0
 margin_right = 162.0
 margin_bottom = 30.0
-theme = ExtResource( 2 )
 text = "POKEMON"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -101,7 +100,6 @@ __meta__ = {
 margin_left = 36.0
 margin_right = 162.0
 margin_bottom = 30.0
-theme = ExtResource( 2 )
 text = "BAG"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -129,7 +127,6 @@ __meta__ = {
 margin_left = 36.0
 margin_right = 162.0
 margin_bottom = 30.0
-theme = ExtResource( 2 )
 text = "MAP"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -157,7 +154,6 @@ __meta__ = {
 margin_left = 36.0
 margin_right = 162.0
 margin_bottom = 30.0
-theme = ExtResource( 2 )
 text = "TRAINER"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -186,7 +182,6 @@ margin_left = 36.0
 margin_right = 162.0
 margin_bottom = 30.0
 rect_pivot_offset = Vector2( 40.9032, 15 )
-theme = ExtResource( 2 )
 text = "SAVE"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -214,7 +209,6 @@ __meta__ = {
 margin_left = 36.0
 margin_right = 162.0
 margin_bottom = 30.0
-theme = ExtResource( 2 )
 text = "OPTIONS"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -242,7 +236,6 @@ __meta__ = {
 margin_left = 36.0
 margin_right = 162.0
 margin_bottom = 30.0
-theme = ExtResource( 2 )
 text = "CLOSE"
 __meta__ = {
 "_edit_use_anchors_": false
