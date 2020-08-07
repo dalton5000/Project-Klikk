@@ -1,0 +1,2 @@
+extends Consumable
+class_name BattleItem
