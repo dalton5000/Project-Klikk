@@ -1,0 +1,184 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://source/hud/theme.tres" type="Theme" id=1]
+[ext_resource path="res://icon-small.png" type="Texture" id=2]
+[ext_resource path="res://assets/gui/bg_panel-export.png" type="Texture" id=3]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 32, 32 )
+margin_left = 10.0
+margin_right = 10.0
+margin_top = 10.0
+margin_bottom = 10.0
+
+[node name="ItemMenu" type="PanelContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -373.5
+margin_top = -201.5
+margin_right = 373.5
+margin_bottom = 201.5
+theme = ExtResource( 1 )
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 737.0
+margin_bottom = 393.0
+custom_constants/separation = 10
+
+[node name="Category" type="VBoxContainer" parent="HBoxContainer"]
+margin_right = 56.0
+margin_bottom = 383.0
+custom_constants/separation = 5
+
+[node name="Button" type="Button" parent="HBoxContainer/Category"]
+margin_right = 56.0
+margin_bottom = 50.0
+size_flags_vertical = 3
+text = "Cat"
+
+[node name="Button2" type="Button" parent="HBoxContainer/Category"]
+margin_top = 55.0
+margin_right = 56.0
+margin_bottom = 105.0
+size_flags_vertical = 3
+text = "Cat"
+
+[node name="Button3" type="Button" parent="HBoxContainer/Category"]
+margin_top = 110.0
+margin_right = 56.0
+margin_bottom = 160.0
+size_flags_vertical = 3
+text = "Cat"
+
+[node name="Button4" type="Button" parent="HBoxContainer/Category"]
+margin_top = 165.0
+margin_right = 56.0
+margin_bottom = 215.0
+size_flags_vertical = 3
+text = "Cat"
+
+[node name="Button5" type="Button" parent="HBoxContainer/Category"]
+margin_top = 220.0
+margin_right = 56.0
+margin_bottom = 270.0
+size_flags_vertical = 3
+text = "Cat"
+
+[node name="Button6" type="Button" parent="HBoxContainer/Category"]
+margin_top = 275.0
+margin_right = 56.0
+margin_bottom = 325.0
+size_flags_vertical = 3
+text = "Cat"
+
+[node name="Button7" type="Button" parent="HBoxContainer/Category"]
+margin_top = 330.0
+margin_right = 56.0
+margin_bottom = 383.0
+size_flags_vertical = 3
+text = "Cat"
+
+[node name="ItemList" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 66.0
+margin_right = 391.0
+margin_bottom = 383.0
+size_flags_horizontal = 3
+custom_constants/separation = 10
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer/ItemList"]
+margin_right = 325.0
+margin_bottom = 27.0
+text = "Search item..."
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/ItemList"]
+margin_top = 37.0
+margin_right = 325.0
+margin_bottom = 383.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemList" type="VBoxContainer" parent="HBoxContainer/ItemList/ScrollContainer"]
+margin_right = 325.0
+size_flags_horizontal = 3
+
+[node name="ItemDetails" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 401.0
+margin_right = 727.0
+margin_bottom = 383.0
+size_flags_horizontal = 3
+custom_constants/separation = 10
+
+[node name="Name" type="Label" parent="HBoxContainer/ItemDetails"]
+margin_right = 326.0
+margin_bottom = 17.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Pokeball"
+align = 1
+
+[node name="Picture" type="TextureRect" parent="HBoxContainer/ItemDetails"]
+margin_top = 27.0
+margin_right = 326.0
+margin_bottom = 155.0
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/ItemDetails"]
+margin_top = 165.0
+margin_right = 326.0
+margin_bottom = 336.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ItemDescription" type="Label" parent="HBoxContainer/ItemDetails/ScrollContainer"]
+margin_right = 314.0
+margin_bottom = 337.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "A Poké Ball is a type of item that is critical to a Trainer's quest, used for catching and storing Pokémon. Both a general term used to describe the various kinds as well as a specific term to refer to the most basic among these variations, Poké Balls are ubiquitous in the modern Pokémon world.
+More text here so you have to scroll a bit this is very interesting keep scrolling yes good more scroll nice"
+autowrap = true
+
+[node name="ButtonRow" type="HBoxContainer" parent="HBoxContainer/ItemDetails"]
+margin_top = 346.0
+margin_right = 326.0
+margin_bottom = 383.0
+alignment = 1
+
+[node name="Use" type="Button" parent="HBoxContainer/ItemDetails/ButtonRow"]
+margin_right = 78.0
+margin_bottom = 37.0
+size_flags_horizontal = 3
+text = "Use"
+
+[node name="Give" type="Button" parent="HBoxContainer/ItemDetails/ButtonRow"]
+margin_left = 82.0
+margin_right = 160.0
+margin_bottom = 37.0
+size_flags_horizontal = 3
+text = "Give"
+
+[node name="Trash" type="Button" parent="HBoxContainer/ItemDetails/ButtonRow"]
+margin_left = 164.0
+margin_right = 244.0
+margin_bottom = 37.0
+size_flags_horizontal = 3
+text = "Trash"
+
+[node name="Back" type="Button" parent="HBoxContainer/ItemDetails/ButtonRow"]
+margin_left = 248.0
+margin_right = 326.0
+margin_bottom = 37.0
+size_flags_horizontal = 3
+text = "Back"
