@@ -22,7 +22,6 @@ func _load_items() -> void:
 	items.clear()
 	
 	var file_dicts = Loader.load_dir("res://data/items/", ["tres", "res"])
-	
 	for file_dict in file_dicts:
 		items[file_dict.data.name] = file_dict.data
 		

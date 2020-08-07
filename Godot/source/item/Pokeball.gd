@@ -1,2 +1,2 @@
-extends "res://source/item/Consumable.gd"
+extends Consumable
 class_name ItemPokeball
